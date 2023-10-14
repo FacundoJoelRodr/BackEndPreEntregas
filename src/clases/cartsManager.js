@@ -32,7 +32,6 @@ class CartsManager {
   
     carts.push(newCart);
   
-    // Actualizar el archivo JSON
     await this.saveJsonToFile(this.path, carts);
   
     console.log("Se agregó correctamente el carrito");

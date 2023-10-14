@@ -13,21 +13,15 @@ class ProductManager {
   async addProduct(productAdd) {
     const { title, code, price, stock, description } = productAdd;
     const products = await this.getJsonFromFile(this.path);
-
-    if (
-      !title ||
-      !code ||
-      !price ||
-      !stock ||
-      !description
-    ) {
+  
+    if (!title || !code || !price || !stock || !description) {
       console.log(`Faltan campos obligatorios`);
-      return;
+      return null; 
     }
+  
     if (products.some((p) => p.code === code)) {
-      console.log(
-        "Este producto ya se encuentra en el array y no se va a agregar"
-      );
+      console.log("Este producto ya se encuentra en el array y no se va a agregar");
+      return null; 
     } else {
       const id = products.length + 1;
       const newProduct = {
@@ -40,7 +34,11 @@ class ProductManager {
       };
       products.push(newProduct);
       console.log("Se agregó correctamente el producto");
-      return this.saveJsonToFile(this.path, products);
+      if (this.saveJsonToFile(this.path, products)) {
+        return newProduct;
+      } else {
+        return null;
+      }
     }
   }
 

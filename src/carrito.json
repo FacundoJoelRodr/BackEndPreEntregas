@@ -9,14 +9,9 @@
 			{
 				"idProduct": 1,
 				"quantity": 3
-			}
-		]
-	},
-	{
-		"idCart": 2,
-		"products": [
+			},
 			{
-				"idProduct": 2,
+				"idProduct": 11,
 				"quantity": 1
 			}
 		]

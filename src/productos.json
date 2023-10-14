@@ -96,5 +96,29 @@
 		"price": 200,
 		"stock": 25,
 		"description": "Este es un producto prueba postman"
+	},
+	{
+		"id": 12,
+		"title": "producto 11prueba",
+		"code": "abc1333311111331132113",
+		"price": 200,
+		"stock": 25,
+		"description": "Este es un producto prueba postman 2.0"
+	},
+	{
+		"id": 13,
+		"title": "producto 11prueba",
+		"code": "abc13333111113311321131",
+		"price": 200,
+		"stock": 25,
+		"description": "Este es un producto prueba postman 2.0"
+	},
+	{
+		"id": 14,
+		"title": "producto 11prueba",
+		"code": "abc133331111133113211311",
+		"price": 200,
+		"stock": 25,
+		"description": "Este es un producto prueba postman 2.0"
 	}
 ]

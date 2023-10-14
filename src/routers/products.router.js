@@ -14,7 +14,6 @@ const productManager = new ProductManager(productosJsonPath);
 router.get("/products", async (req, res) => {
   const { limit } = req.query;
   const products = await productManager.getProducts();
-  console.log(productosJsonPath, "asdassad");
   if (limit) {
     const limitedProducts = products.slice(0, parseInt(limit, 10));
     res.status(200).send(limitedProducts);
@@ -36,17 +35,17 @@ router.get("/products/:pid", async (req, res) => {
 router.post('/products', async (req, res) => {
   const { title, code, price, stock, description } = req.body;
   const productData = req.body;
-  console.log(productData,"nuevoproduto")
   try {
     const newProduct = await productManager.addProduct(productData);
-    res.status(201).json(newProduct);
-    console.log(newProduct,"nuevoproduto")
+    if (newProduct) {
+      res.status(201).json(newProduct);
+    } else {
+      res.status(400).json({ error: 'No se pudo crear el producto. El código ya existe.' });
+    }
   } catch (error) {
-    console.log(productData,"nuevoproduto")
-    res.status(500).json({ error: 'No se pudo crear el producto' });
+    res.status(500).json({ error: 'Error interno del servidor' });
   }
 });
-
 
 router.put('/products/:pid', async (req, res) => {
   const { pid } = req.params;
