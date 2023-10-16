@@ -2,7 +2,6 @@ import { promises as fs } from "fs";
 
 class CartsManager {
   constructor(path) {
-    this.cartsA = [];
     this.path = path.replace(/^\\/g, "");
   }
 
@@ -11,36 +10,33 @@ class CartsManager {
   }
 
   async addCart(cartAdd) {
-    const { productId, quantity } = cartAdd;
-    const carts = await this.getJsonFromFile(this.path);
-  
-    if (!productId || !quantity) {
-      console.log(`Faltan campos obligatorios`);
-      return;
-    }
-  
-    const id = carts.length + 1;
-    const newCart = {
-      idCart: id, 
-      products: [  
-        {
-          idProduct: productId, 
-          quantity,
-        },
-      ],
-    };
-  
-    carts.push(newCart);
-  
-    await this.saveJsonToFile(this.path, carts);
-  
-    console.log("Se agregó correctamente el carrito");
-  
-    return newCart;
-  } 
+  const { productId, quantity } = cartAdd;
+  const carts = await this.getJsonFromFile(this.path);
+
+  const id = carts.length + 1;
+  const newCart = {
+    idCart: id,
+    products: [],
+  };
+
+  if (productId && quantity) {
+    newCart.products.push({
+      idProduct: productId,
+      quantity,
+    });
+  }
+
+  carts.push(newCart);
+
+  await this.saveJsonToFile(this.path, carts);
+
+  console.log("Se agregó correctamente el carrito");
+
+  return newCart;
+}
 
   async getCartById(cartId) {
-    const carts = await this.getJsonFromFile(this.path);
+    const carts = await this.getCarts();
     const cart = carts.find((p) => p.idCart === cartId);
 
     if (!cart) {
@@ -79,7 +75,6 @@ class CartsManager {
       throw new Error("El archivo no tiene un formato JSON correcto");
     }
   }
-
   async saveJsonToFile(path, data) {
     try {
       const content = JSON.stringify(data, null, "\t");
