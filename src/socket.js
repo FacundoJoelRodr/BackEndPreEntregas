@@ -21,15 +21,15 @@ export const init = (httpServer) => {
 
     socketClient.on("addProduct", async (newP) => {
       await productManager.addProduct(newP);
-      products = await productManager.getProducts(); // Actualiza la lista de productos
-      io.emit("listProducts", products); // Emite la lista actualizada a todos los clientes
+      products = await productManager.getProducts(); 
+      io.emit("listProducts", products); 
     });
 
     socketClient.on("deleteProduct", async (idP) => {
         await productManager.deleteProduct(parseInt(idP.id));
-        products = await productManager.getProducts(); // Actualiza la lista de productos
+        products = await productManager.getProducts();
         console.log(idP,"sockets");
-        io.emit("listProducts", products); // Emite la lista actualizada a todos los clientes
+        io.emit("listProducts", products); 
       });
   });
 };
