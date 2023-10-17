@@ -120,5 +120,13 @@
 		"price": 200,
 		"stock": 25,
 		"description": "Este es un producto prueba postman 2.0"
+	},
+	{
+		"id": 15,
+		"title": "producto 15",
+		"code": "15",
+		"price": 200,
+		"stock": 25,
+		"description": "Este es un producto prueba postman 2.0"
 	}
 ]
