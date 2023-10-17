@@ -5,7 +5,7 @@ import ProductManager from "../clases/productManager.js";
 
 const router = Router();
 
-//path de los archivos json
+
 const carritoJsonPath = path.join(
   path.dirname(new URL(import.meta.url).pathname),
   "../carrito.json"
@@ -16,22 +16,20 @@ const productosJsonPath = path.join(
   "../productos.json"
 );
 
-//nuevos productos y carritos
 const cartsManager = new CartsManager(carritoJsonPath);
 const productManager = new ProductManager(productosJsonPath);
 
-//creacion de nuevos carritos
-router.post("/carts/", async (req, res) => {
+
+router.post('/carts/', async (req, res) => {
   const cartData = req.body;
   console.log(cartData, "nuevo carrito");
   try {
     const newCart = await cartsManager.addCart(cartData);
-
     const cartResponse = {
       idCart: newCart.id,
-      products: newCart.products.map((product) => ({
+      products: newCart.products.map(product => ({
         idProduct: product.productId,
-        quantity: product.quantity,
+        quantity: product.quantity
       })),
     };
 
@@ -39,11 +37,11 @@ router.post("/carts/", async (req, res) => {
     console.log(newCart, "nuevo carrito try");
   } catch (error) {
     console.log(cartData, "nuevo carrito error");
-    res.status(500).json({ error: "No se pudo crear el carrito" });
+    res.status(500).json({ error: 'No se pudo crear el carrito' });
   }
 });
 
-//se obtiene carrito por id
+
 router.get("/carts/:cid", async (req, res) => {
   const { cid } = req.params;
   const cart = await cartsManager.getCartById(parseInt(cid));
@@ -56,7 +54,6 @@ router.get("/carts/:cid", async (req, res) => {
   }
 });
 
-//se agrega productos por id al carrito por id
 router.post("/carts/:cid/product/:pid", async (req, res) => {
   const { cid, pid } = req.params;
   const cartId = parseInt(cid);
@@ -73,6 +70,7 @@ router.post("/carts/:cid/product/:pid", async (req, res) => {
       cart.products = [];
     }
 
+
     const productExists = await productManager.getProductById(productId);
     if (!productExists) {
       return res.status(404).json({ error: "Producto no encontrado" });
@@ -83,8 +81,10 @@ router.post("/carts/:cid/product/:pid", async (req, res) => {
     );
 
     if (existingProductIndex !== -1) {
+
       cart.products[existingProductIndex].quantity += 1;
     } else {
+
       cart.products.push({ idProduct: productId, quantity: 1 });
     }
 
@@ -96,7 +96,7 @@ router.post("/carts/:cid/product/:pid", async (req, res) => {
       return res.status(404).json({ error: "Carrito no encontrado" });
     }
 
-    await cartsManager.saveJsonToFile(cartsManager.path, carts);
+    await cartsManager.saveJsonToFile("../data/carrito.json", carts);
 
     const cartResponse = {
       idCart: cart.idCart,

@@ -1,0 +1,124 @@
+[
+	{
+		"id": 1,
+		"title": "prueba de put",
+		"code": "abc133331111133323",
+		"thumbnail": "Sin imagen",
+		"price": 200,
+		"stock": 25,
+		"description": "Este es un producto prueba postman"
+	},
+	{
+		"id": 2,
+		"title": "producto prueba1111",
+		"code": "abc1231",
+		"thumbnail": "Sin imagen",
+		"price": 300,
+		"stock": 25,
+		"description": "Este es un producto prueba111111"
+	},
+	{
+		"id": 3,
+		"title": "producto prueba222222",
+		"code": "abc12312",
+		"thumbnail": "Sin imagen",
+		"price": 400,
+		"stock": 25,
+		"description": "Este es un producto prueba22222"
+	},
+	{
+		"id": 4,
+		"title": "producto prueba",
+		"code": "abc123",
+		"thumbnail": "Sin imagen",
+		"price": 200,
+		"stock": 25,
+		"description": "Este es un producto prueba"
+	},
+	{
+		"id": 5,
+		"title": "producto prueba1111",
+		"code": "abc1231",
+		"thumbnail": "Sin imagen",
+		"price": 300,
+		"stock": 25,
+		"description": "Este es un producto prueba111111"
+	},
+	{
+		"id": 6,
+		"title": "producto prueba222222",
+		"code": "abc12312",
+		"thumbnail": "Sin imagen",
+		"price": 400,
+		"stock": 25,
+		"description": "Este es un producto prueba22222"
+	},
+	{
+		"id": 7,
+		"title": "producto prueba",
+		"code": "abc123",
+		"thumbnail": "Sin imagen",
+		"price": 200,
+		"stock": 25,
+		"description": "Este es un producto prueba"
+	},
+	{
+		"id": 8,
+		"title": "producto prueba1111",
+		"code": "abc1231234",
+		"thumbnail": "Sin imagen",
+		"price": 4300,
+		"stock": 25,
+		"description": "Este es un producto prueba111111"
+	},
+	{
+		"id": 9,
+		"title": "producto prueba222222",
+		"code": "abc123123",
+		"thumbnail": "Sin imagen",
+		"price": 3400,
+		"stock": 25,
+		"description": "Este es un producto prueba22222"
+	},
+	{
+		"id": 10,
+		"title": "producto prueba222222",
+		"code": "abc1231231",
+		"thumbnail": "Sin imagen",
+		"price": 1400,
+		"stock": 25,
+		"description": "Este es un producto prueba22222"
+	},
+	{
+		"id": 11,
+		"title": "prueba de put 2.0",
+		"code": "abc133331111133323",
+		"price": 200,
+		"stock": 25,
+		"description": "Este es un producto prueba postman"
+	},
+	{
+		"id": 12,
+		"title": "producto 11prueba",
+		"code": "abc1333311111331132113",
+		"price": 200,
+		"stock": 25,
+		"description": "Este es un producto prueba postman 2.0"
+	},
+	{
+		"id": 13,
+		"title": "producto 11prueba",
+		"code": "abc13333111113311321131",
+		"price": 200,
+		"stock": 25,
+		"description": "Este es un producto prueba postman 2.0"
+	},
+	{
+		"id": 14,
+		"title": "producto 11prueba",
+		"code": "abc133331111133113211311",
+		"price": 200,
+		"stock": 25,
+		"description": "Este es un producto prueba postman 2.0"
+	}
+]
