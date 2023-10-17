@@ -1,3 +1,15 @@
 [
-
+	{
+		"idCart": 1,
+		"products": [
+			{
+				"idProduct": 2,
+				"quantity": 2
+			}
+		]
+	},
+	{
+		"idCart": 2,
+		"products": []
+	}
 ]
