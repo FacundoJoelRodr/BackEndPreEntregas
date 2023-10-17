@@ -170,7 +170,6 @@ class ProductManager {
       throw new Error("El archivo lamentablemente no pudo ser guardado");
     }
   }
-  
 }
 
 export default ProductManager;
