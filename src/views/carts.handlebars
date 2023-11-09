@@ -1,0 +1,25 @@
+<h1>Carrito de Compras</h1>
+<p>ID del carrito: {{b}}</p>
+
+<table id="main" role="grid">
+  <tr>
+    <th>Título</th>
+    <th>Descripción</th>
+    <th>Código</th>
+    <th>Categoría</th>
+    <th>Stock</th>
+    <th>Precio</th>
+    <th>Cantidad</th>
+  </tr>
+  {{#each a}}
+  <tr>
+    <td>{{this.product.title}}</td>
+    <td>{{this.product.description}}</td>
+    <td>{{this.product.code}}</td>
+    <td>{{this.product.category}}</td>
+    <td>{{this.product.stock}}</td>
+    <td>{{this.product.price}}</td>
+    <td>{{this.quantity}}</td>
+  </tr>
+  {{/each}}
+</table>
